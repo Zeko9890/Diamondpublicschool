@@ -1,4 +1,4 @@
-// 3JS Animated Background
+// 3JS Subtle Education-themed Background
 class ThreeJSBackground {
     constructor() {
         this.scene = null;
@@ -18,7 +18,7 @@ class ThreeJSBackground {
         
         // Create camera
         this.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 1000);
-        this.camera.position.z = 50;
+        this.camera.position.z = 80;
         
         // Create renderer
         this.renderer = new THREE.WebGLRenderer({ 
@@ -26,60 +26,66 @@ class ThreeJSBackground {
             antialias: true 
         });
         this.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.renderer.setClearColor(0x000000, 0); // Transparent background
+        this.renderer.setClearColor(0x000000, 0);
         this.renderer.domElement.style.position = 'fixed';
         this.renderer.domElement.style.top = '0';
         this.renderer.domElement.style.left = '0';
         this.renderer.domElement.style.zIndex = '-1';
         this.renderer.domElement.style.pointerEvents = 'none';
+        this.renderer.domElement.style.opacity = '0.4'; // More subtle
         
         document.body.appendChild(this.renderer.domElement);
         
-        // Create particles
-        this.createParticles();
+        // Create subtle particles
+        this.createEducationParticles();
         
         // Add event listeners
         window.addEventListener('resize', this.onWindowResize.bind(this));
         document.addEventListener('mousemove', this.onMouseMove.bind(this));
     }
 
-    createParticles() {
+    createEducationParticles() {
         const geometry = new THREE.BufferGeometry();
         const vertices = [];
         const colors = [];
         
-        // Education-themed colors: soft blues, greens, and purples
+        // Education-themed subtle colors: soft blues and gentle purples
         const colorPalette = [
-            new THREE.Color(0x3a86ff), // Primary blue
-            new THREE.Color(0x8338ec), // Secondary purple
-            new THREE.Color(0x06d6a0), // Education green
-            new THREE.Color(0x118ab2), // Learning blue
-            new THREE.Color(0xffd166)  // Wisdom gold
+            new THREE.Color(0x3a86ff), // Learning blue
+            new THREE.Color(0x6366f1), // Wisdom indigo
+            new THREE.Color(0x8b5cf6), // Knowledge purple
+            new THREE.Color(0x06d6a0), // Growth green
+            new THREE.Color(0x0ea5e9)  // Clarity sky blue
         ];
         
-        // Create 1500 particles
-        for (let i = 0; i < 1500; i++) {
-            // Random position in a sphere
-            const x = (Math.random() - 0.5) * 200;
-            const y = (Math.random() - 0.5) * 200;
-            const z = (Math.random() - 0.5) * 200;
+        // Only 300 particles (reduced from 1500)
+        for (let i = 0; i < 300; i++) {
+            // Spread particles more evenly
+            const radius = 100 + Math.random() * 50;
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.random() * Math.PI;
+            
+            const x = radius * Math.sin(phi) * Math.cos(theta);
+            const y = radius * Math.sin(phi) * Math.sin(theta);
+            const z = radius * Math.cos(phi);
             
             vertices.push(x, y, z);
             
-            // Random color from palette
-            const color = colorPalette[Math.floor(Math.random() * colorPalette.length)];
-            colors.push(color.r, color.g, color.b);
+            // Use softer, more consistent colors
+            const color = colorPalette[i % 3]; // Use only first 3 colors for consistency
+            colors.push(color.r * 0.7, color.g * 0.7, color.b * 0.7); // Dimmed colors
         }
         
         geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
         geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
         
         const material = new THREE.PointsMaterial({
-            size: 2,
+            size: 1.5, // Smaller particles
             vertexColors: true,
             transparent: true,
-            opacity: 0.6,
-            blending: THREE.AdditiveBlending
+            opacity: 0.3, // More transparent
+            blending: THREE.NormalBlending, // Less intense blending
+            sizeAttenuation: true
         });
         
         this.particles = new THREE.Points(geometry, material);
@@ -93,35 +99,46 @@ class ThreeJSBackground {
     }
 
     onMouseMove(event) {
-        this.mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
-        this.mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
+        // Very subtle mouse interaction
+        this.mouseX = (event.clientX - window.innerWidth / 2) * 0.0001;
+        this.mouseY = (event.clientY - window.innerHeight / 2) * 0.0001;
     }
 
     animate() {
         requestAnimationFrame(this.animate.bind(this));
         
         if (this.particles) {
-            // Gentle rotation
-            this.particles.rotation.x += 0.001;
-            this.particles.rotation.y += 0.002;
+            // Very slow, gentle rotation
+            this.particles.rotation.x += 0.0003;
+            this.particles.rotation.y += 0.0005;
             
-            // Mouse interaction
-            this.particles.rotation.x += this.mouseY;
-            this.particles.rotation.y += this.mouseX;
+            // Minimal mouse interaction
+            this.particles.rotation.x += this.mouseY * 0.3;
+            this.particles.rotation.y += this.mouseX * 0.3;
             
-            // Pulsating effect
-            const time = Date.now() * 0.001;
-            this.particles.scale.setScalar(1 + Math.sin(time * 0.5) * 0.1);
+            // Remove pulsing effect for more stability
         }
         
         this.renderer.render(this.scene, this.camera);
     }
+
+    // Clean up method
+    destroy() {
+        if (this.renderer && this.renderer.domElement.parentNode) {
+            this.renderer.domElement.parentNode.removeChild(this.renderer.domElement);
+        }
+    }
 }
 
-// Initialize when DOM is loaded
+// Initialize with performance check
 document.addEventListener('DOMContentLoaded', function() {
-    // Only initialize on non-mobile devices for better performance
-    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        new ThreeJSBackground();
+    // Check if user prefers reduced motion
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    // Only initialize on non-mobile devices and if user doesn't prefer reduced motion
+    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && !prefersReducedMotion) {
+        setTimeout(() => {
+            new ThreeJSBackground();
+        }, 1000); // Delay start for better page load
     }
 });
