@@ -77,10 +77,10 @@ class ThreeJSBackground {
         geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
         
         const material = new THREE.PointsMaterial({
-            size: 1.2,
+            size: 2.5,
             vertexColors: true,
             transparent: true,
-            opacity: 0.25,
+            opacity: 0.4,
             blending: THREE.NormalBlending,
             sizeAttenuation: true
         });
