@@ -30,11 +30,12 @@ class ThreeJSBackground {
         this.renderer.domElement.style.position = 'fixed';
         this.renderer.domElement.style.top = '0';
         this.renderer.domElement.style.left = '0';
-        this.renderer.domElement.style.zIndex = '-1';
+        this.renderer.domElement.style.zIndex = '-9999'; // Very low z-index
         this.renderer.domElement.style.pointerEvents = 'none';
-        this.renderer.domElement.style.opacity = '0.4'; // More subtle
+        this.renderer.domElement.style.opacity = '0.3';
         
-        document.body.appendChild(this.renderer.domElement);
+        // Add to body but ensure it's behind everything
+        document.body.insertBefore(this.renderer.domElement, document.body.firstChild);
         
         // Create subtle particles
         this.createEducationParticles();
@@ -49,19 +50,16 @@ class ThreeJSBackground {
         const vertices = [];
         const colors = [];
         
-        // Education-themed subtle colors: soft blues and gentle purples
+        // Education-themed subtle colors
         const colorPalette = [
             new THREE.Color(0x3a86ff), // Learning blue
             new THREE.Color(0x6366f1), // Wisdom indigo
             new THREE.Color(0x8b5cf6), // Knowledge purple
-            new THREE.Color(0x06d6a0), // Growth green
-            new THREE.Color(0x0ea5e9)  // Clarity sky blue
         ];
         
-        // Only 300 particles (reduced from 1500)
-        for (let i = 0; i < 300; i++) {
-            // Spread particles more evenly
-            const radius = 100 + Math.random() * 50;
+        // Only 200 particles (even fewer)
+        for (let i = 0; i < 200; i++) {
+            const radius = 120 + Math.random() * 50;
             const theta = Math.random() * Math.PI * 2;
             const phi = Math.random() * Math.PI;
             
@@ -71,20 +69,19 @@ class ThreeJSBackground {
             
             vertices.push(x, y, z);
             
-            // Use softer, more consistent colors
-            const color = colorPalette[i % 3]; // Use only first 3 colors for consistency
-            colors.push(color.r * 0.7, color.g * 0.7, color.b * 0.7); // Dimmed colors
+            const color = colorPalette[i % 3];
+            colors.push(color.r * 0.6, color.g * 0.6, color.b * 0.6);
         }
         
         geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
         geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
         
         const material = new THREE.PointsMaterial({
-            size: 1.5, // Smaller particles
+            size: 1.2,
             vertexColors: true,
             transparent: true,
-            opacity: 0.3, // More transparent
-            blending: THREE.NormalBlending, // Less intense blending
+            opacity: 0.25,
+            blending: THREE.NormalBlending,
             sizeAttenuation: true
         });
         
@@ -99,46 +96,40 @@ class ThreeJSBackground {
     }
 
     onMouseMove(event) {
-        // Very subtle mouse interaction
-        this.mouseX = (event.clientX - window.innerWidth / 2) * 0.0001;
-        this.mouseY = (event.clientY - window.innerHeight / 2) * 0.0001;
+        this.mouseX = (event.clientX - window.innerWidth / 2) * 0.00005;
+        this.mouseY = (event.clientY - window.innerHeight / 2) * 0.00005;
     }
 
     animate() {
         requestAnimationFrame(this.animate.bind(this));
         
         if (this.particles) {
-            // Very slow, gentle rotation
-            this.particles.rotation.x += 0.0003;
-            this.particles.rotation.y += 0.0005;
+            this.particles.rotation.x += 0.0002;
+            this.particles.rotation.y += 0.0003;
             
-            // Minimal mouse interaction
-            this.particles.rotation.x += this.mouseY * 0.3;
-            this.particles.rotation.y += this.mouseX * 0.3;
-            
-            // Remove pulsing effect for more stability
+            this.particles.rotation.x += this.mouseY * 0.2;
+            this.particles.rotation.y += this.mouseX * 0.2;
         }
         
         this.renderer.render(this.scene, this.camera);
     }
-
-    // Clean up method
-    destroy() {
-        if (this.renderer && this.renderer.domElement.parentNode) {
-            this.renderer.domElement.parentNode.removeChild(this.renderer.domElement);
-        }
-    }
 }
 
-// Initialize with performance check
+// Initialize with better checks
 document.addEventListener('DOMContentLoaded', function() {
-    // Check if user prefers reduced motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
     
-    // Only initialize on non-mobile devices and if user doesn't prefer reduced motion
-    if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && !prefersReducedMotion) {
-        setTimeout(() => {
-            new ThreeJSBackground();
-        }, 1000); // Delay start for better page load
+    if (!isMobile && !prefersReducedMotion) {
+        // Wait for page to load completely
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                try {
+                    new ThreeJSBackground();
+                } catch (error) {
+                    console.log('3JS Background disabled due to performance considerations');
+                }
+            }, 500);
+        });
     }
 });
