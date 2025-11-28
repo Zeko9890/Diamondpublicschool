@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Faculty - Diamond Public School</title>
+    <title>Faculty - Bright Future Academy</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/dark-mode.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,7 +15,7 @@
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <a href="index.html">Diamond Public School</a>
+                <a href="index.html">Bright Future Academy</a>
             </div>
             <div class="nav-menu" id="nav-menu">
                 <ul class="nav-list">
@@ -42,72 +42,76 @@
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
-            <h1>Our Faculty</h1>
-            <p>Meet our dedicated team of educators</p>
+            <h1>Our Faculty & Staff</h1>
+            <p>Meet our team of 78 dedicated educators and staff members</p>
         </div>
     </section>
-<!-- Faculty Search -->
-<section class="faculty-search">
-    <div class="container">
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" id="faculty-search" placeholder="Search staff by name, subject, or qualification...">
-                <span class="search-icon">🔍</span>
+
+    <!-- Faculty Search -->
+    <section class="faculty-search">
+        <div class="container">
+            <div class="search-container">
+                <div class="search-box">
+                    <input type="text" id="faculty-search" placeholder="Search staff by name, subject, or qualification...">
+                    <span class="search-icon">🔍</span>
+                </div>
+                <div class="search-results" id="search-results"></div>
             </div>
-            <div class="search-results" id="search-results"></div>
         </div>
-    </div>
-</section>
+    </section>
+
     <!-- Faculty Filter -->
     <section class="faculty-filter">
         <div class="container">
+            <div class="filter-header">
+                <h3>Filter by Department</h3>
+                <div class="results-info" id="results-info">Showing all 78 staff members</div>
+            </div>
             <div class="filter-options">
-                <button class="filter-btn active" data-department="all">All Departments</button>
-                <button class="filter-btn" data-department="science">Science</button>
-                <button class="filter-btn" data-department="commerce">Commerce</button>
-                <button class="filter-btn" data-department="arts">Arts & Humanities</button>
-                <button class="filter-btn" data-department="language">Languages</button>
+                <button class="filter-btn active" data-department="all">All Staff (78)</button>
+                <button class="filter-btn" data-department="science">Science (22)</button>
+                <button class="filter-btn" data-department="commerce">Commerce (18)</button>
+                <button class="filter-btn" data-department="arts">Arts & Humanities (25)</button>
+                <button class="filter-btn" data-department="language">Languages (13)</button>
             </div>
         </div>
     </section>
 
-   <!-- Faculty Grid -->
-<section class="faculty-grid-section">
-    <div class="container">
-        <div class="faculty-grid" id="faculty-grid">
-            <!-- Faculty cards will be loaded here -->
+    <!-- Faculty Grid -->
+    <section class="faculty-grid-section">
+        <div class="container">
+            <div class="faculty-grid" id="faculty-grid">
+                <!-- Faculty cards will be loaded here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <button class="page-btn prev-btn" disabled>‹ Previous</button>
+                <div class="page-numbers" id="page-numbers"></div>
+                <button class="page-btn next-btn">Next ›</button>
+            </div>
         </div>
-        
-        <!-- Pagination -->
-        <div class="pagination" id="pagination">
-            <button class="page-btn prev-btn" disabled>‹ Previous</button>
-            <div class="page-numbers" id="page-numbers"></div>
-            <button class="page-btn next-btn">Next ›</button>
-        </div>
-        
-        <!-- Results Info -->
-        <div class="results-info" id="results-info"></div>
-    </div>
-</section>
+    </section>
 
-<!-- Faculty Modal -->
-<div id="faculty-modal" class="modal">
-    <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-body" id="modal-body">
-            <!-- Modal content will be loaded here -->
+    <!-- Faculty Modal -->
+    <div id="faculty-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be loaded here -->
+            </div>
         </div>
     </div>
-</div>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Diamond Public School</h3>
-                    <p>Teela Shahbajpur, Loni, Ghaziabad, UP(201102)</p>
-                    <p>Email: diamondpublicschool@gmail.com</p>
-                    <p>Phone: +(91) 98103 31808</p>
+                    <h3>Bright Future Academy</h3>
+                    <p>123 Education Street, Learning City, LC 12345</p>
+                    <p>Email: info@brightfuture.edu</p>
+                    <p>Phone: (123) 456-7890</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -139,7 +143,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Diamond Public School. All rights reserved.</p>
+                <p>&copy; 2023 Bright Future Academy. All rights reserved.</p>
             </div>
         </div>
     </footer>

@@ -1819,10 +1819,11 @@ canvas {
     font-size: 0.9rem;
 }
 
-/* Search Styles */
+/* Faculty Search Styles */
 .faculty-search {
     padding: 2rem 0;
     background: var(--bg-light);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .search-container {
@@ -1842,6 +1843,7 @@ canvas {
     border-radius: 50px;
     font-size: 1rem;
     transition: var(--transition);
+    background: var(--bg-color);
 }
 
 #faculty-search:focus {
@@ -1867,11 +1869,12 @@ canvas {
     right: 0;
     background: var(--bg-color);
     border-radius: 15px;
-    box-shadow: var(--shadow);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     margin-top: 0.5rem;
     z-index: 100;
     max-height: 300px;
     overflow-y: auto;
+    border: 1px solid var(--border-color);
 }
 
 .search-count {
@@ -1879,6 +1882,8 @@ canvas {
     background: var(--bg-light);
     font-weight: 600;
     border-radius: 15px 15px 0 0;
+    color: var(--text-color);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .search-item {
@@ -1886,6 +1891,9 @@ canvas {
     border-bottom: 1px solid var(--border-color);
     cursor: pointer;
     transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
 }
 
 .search-item:hover {
@@ -1897,8 +1905,434 @@ canvas {
     border-radius: 0 0 15px 15px;
 }
 
+.search-dept {
+    font-size: 0.85rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
 .no-results {
     padding: 2rem 1.5rem;
     text-align: center;
     color: var(--text-light);
+}
+
+/* Faculty Filter Styles */
+.faculty-filter {
+    padding: 2rem 0;
+    background: var(--bg-color);
+}
+
+.filter-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.filter-header h3 {
+    color: var(--text-color);
+    margin: 0;
+}
+
+.results-info {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.filter-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(58, 134, 255, 0.3);
+}
+
+/* Faculty Grid Styles */
+.faculty-grid-section {
+    padding: 2rem 0 4rem;
+}
+
+.faculty-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.no-teachers {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 3rem;
+    color: var(--text-light);
+    font-size: 1.1rem;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.page-btn, .page-number {
+    padding: 0.75rem 1.25rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 500;
+    min-width: 44px;
+    text-align: center;
+}
+
+.page-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+}
+
+.page-number.active {
+    background: var(--primary-color);
+    color: white;
+    border-color: var(--primary-color);
+}
+
+.page-btn:hover:not(:disabled),
+.page-number:hover:not(.active) {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Teacher Card Styles */
+.teacher-card {
+    background: var(--bg-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+
+.teacher-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.teacher-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.teacher-info {
+    padding: 1.5rem;
+}
+
+.teacher-name {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.3rem;
+    line-height: 1.2;
+}
+
+.teacher-department {
+    display: inline-block;
+    background: rgba(58, 134, 255, 0.1);
+    color: var(--primary-color);
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.teacher-subjects {
+    color: var(--text-color);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    font-size: 0.95rem;
+}
+
+.teacher-qualification {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-style: italic;
+    line-height: 1.4;
+}
+
+.btn-view-profile {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+}
+
+.btn-view-profile:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--bg-color);
+    margin: 2% auto;
+    padding: 0;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--text-light);
+    z-index: 1;
+    transition: var(--transition);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+}
+
+.close-modal:hover {
+    color: var(--text-color);
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 1);
+}
+
+.teacher-modal-content {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+.teacher-modal-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.teacher-modal-details h2 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    font-size: 1.8rem;
+}
+
+.teacher-modal-department {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.teacher-modal-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-section h4 {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-section p {
+    color: var(--text-color);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.teacher-bio {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--bg-light);
+    border-radius: 10px;
+}
+
+.teacher-bio h4 {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
+}
+
+.teacher-bio p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.modal-actions .btn {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .filter-options {
+        justify-content: flex-start;
+    }
+    
+    .faculty-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    
+    .teacher-modal-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1.5rem;
+    }
+    
+    .teacher-modal-image {
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    
+    .teacher-modal-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .modal-actions {
+        flex-direction: column;
+    }
+    
+    .pagination {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .page-numbers {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 5% auto;
+        width: 95%;
+    }
+    
+    .teacher-modal-content {
+        padding: 1.5rem;
+    }
+    
+    .filter-options {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-btn {
+        text-align: center;
+    }
 }
