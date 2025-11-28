@@ -1,4 +1,3 @@
-
 // Main JavaScript file
 document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
@@ -64,9 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Load events from JSON
     // Initialize events modal
-initEventsModal();
+    initEventsModal();
+    
+    // Load events from JSON
+    loadEvents();
 });
 
 // Load events data from JSON file
@@ -109,13 +110,18 @@ async function loadEvents() {
 function displayEvents(events) {
     const eventsContainer = document.getElementById('events-container');
     
-    if (!eventsContainer) return;
+    if (!eventsContainer) {
+        console.error('Events container not found!');
+        return;
+    }
     
     // Sort events by date (most recent first)
     events.sort((a, b) => new Date(a.date) - new Date(b.date));
     
     // Display only the 3 most recent events
     const recentEvents = events.slice(0, 3);
+    
+    console.log('Displaying events:', recentEvents); // Debug log
     
     eventsContainer.innerHTML = recentEvents.map(event => `
         <div class="event-card" data-event-id="${event.id}">
@@ -241,6 +247,11 @@ function showEventDetails(eventId) {
 // Initialize events modal
 function initEventsModal() {
     const modal = document.getElementById('events-modal');
+    if (!modal) {
+        console.error('Events modal not found!');
+        return;
+    }
+    
     const closeBtn = modal.querySelector('.close-modal');
     
     closeBtn.addEventListener('click', function() {
@@ -254,7 +265,8 @@ function initEventsModal() {
     });
 }
 
-// Add this to DOMContentLoaded
-document.addEventListener('DOMContentLoaded', function() {
-    initEventsModal();
-});
+// Format date for display
+function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+}
