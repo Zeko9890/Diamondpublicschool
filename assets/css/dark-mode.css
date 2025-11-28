@@ -1,0 +1,36 @@
+/* Dark Mode Styles */
+body.dark-mode {
+    --text-color: #f8f9fa;
+    --text-light: #adb5bd;
+    --bg-color: #121212;
+    --bg-light: #1e1e1e;
+    --bg-dark: #0d0d0d;
+    --border-color: #343a40;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .navbar {
+    background: var(--bg-light);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .stat-card,
+body.dark-mode .academic-card,
+body.dark-mode .event-card {
+    background: var(--bg-light);
+}
+
+body.dark-mode .placeholder-image {
+    opacity: 0.9;
+}
+
+body.dark-mode .slider-prev,
+body.dark-mode .slider-next {
+    background: rgba(30, 30, 30, 0.8);
+    color: white;
+}
+
+body.dark-mode .slider-prev:hover,
+body.dark-mode .slider-next:hover {
+    background: var(--bg-light);
+}

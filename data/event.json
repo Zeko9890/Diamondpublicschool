@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Annual Science Fair",
+        "date": "2023-11-15",
+        "description": "Showcasing innovative projects from our science students. Open to parents and community members.",
+        "image": "Science Fair"
+    },
+    {
+        "id": 2,
+        "title": "Sports Day",
+        "date": "2023-11-25",
+        "description": "Annual inter-house sports competition featuring track and field events.",
+        "image": "Sports Day"
+    },
+    {
+        "id": 3,
+        "title": "Cultural Festival",
+        "date": "2023-12-05",
+        "description": "Celebrating diversity through music, dance, and art performances.",
+        "image": "Cultural Festival"
+    },
+    {
+        "id": 4,
+        "title": "Parent-Teacher Conference",
+        "date": "2023-12-15",
+        "description": "Opportunity for parents to discuss student progress with teachers.",
+        "image": "Parent-Teacher Conference"
+    },
+    {
+        "id": 5,
+        "title": "Graduation Ceremony",
+        "date": "2024-05-20",
+        "description": "Celebrating the achievements of our graduating class.",
+        "image": "Graduation Ceremony"
+    }
+]
