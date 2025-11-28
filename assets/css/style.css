@@ -1322,3 +1322,138 @@ h1, h2, h3, h4, h5, h6 {
         width: 200px;
     }
 }
+/* Google Maps Section */
+.contact-map-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    background: var(--bg-color);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.map-sidebar {
+    padding: 2rem;
+    background: var(--bg-light);
+}
+
+.map-sidebar h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.location-details {
+    margin-bottom: 2rem;
+}
+
+.location-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.location-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.location-icon {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    min-width: 40px;
+}
+
+.location-text h4 {
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.location-text p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.transportation h4 {
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.transport-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.transport-bus,
+.transport-train {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-color);
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.map-container {
+    position: relative;
+    min-height: 400px;
+}
+
+.google-map {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.google-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Design for Maps */
+@media (max-width: 768px) {
+    .contact-map-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .map-sidebar {
+        order: 2;
+    }
+    
+    .map-container {
+        order: 1;
+        min-height: 300px;
+    }
+    
+    .location-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .location-icon {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .transport-options {
+        flex-direction: column;
+    }
+    
+    .map-container {
+        min-height: 250px;
+    }
+}
