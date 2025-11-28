@@ -132,46 +132,67 @@
         </div>
     </section>
 
-    <!-- Academics Section -->
-    <section class="academics-section">
-        <div class="container">
-            <h2 class="section-title">Our Academic Programs</h2>
-            <div class="academics-grid">
-                <div class="academic-card">
-                    <div class="card-icon">🔬</div>
-                    <h3>Science Stream</h3>
-                    <p>Physics, Chemistry, Biology, Mathematics, Computer Science</p>
-                    <a href="#" class="card-link">Explore →</a>
-                </div>
-                <div class="academic-card">
-                    <div class="card-icon">📊</div>
-                    <h3>Commerce Stream</h3>
-                    <p>Accountancy, Business Studies, Economics, Mathematics</p>
-                    <a href="#" class="card-link">Explore →</a>
-                </div>
-                <div class="academic-card">
-                    <div class="card-icon">📚</div>
-                    <h3>Arts & Humanities</h3>
-                    <p>History, Political Science, Psychology, Sociology, Languages</p>
-                    <a href="#" class="card-link">Explore →</a>
-                </div>
+   <!-- Academics Section -->
+<section class="academics-section">
+    <div class="container">
+        <h2 class="section-title">Our Academic Programs</h2>
+        <div class="academics-grid">
+            <div class="academic-card">
+                <div class="card-icon">🔬</div>
+                <h3>Science Stream</h3>
+                <p>Physics, Chemistry, Biology, Mathematics, Computer Science</p>
+                <button class="card-link explore-science">Explore More →</button>
+            </div>
+            <div class="academic-card">
+                <div class="card-icon">📊</div>
+                <h3>Commerce Stream</h3>
+                <p>Accountancy, Business Studies, Economics, Mathematics</p>
+                <button class="card-link explore-commerce">Explore More →</button>
+            </div>
+            <div class="academic-card">
+                <div class="card-icon">📚</div>
+                <h3>Arts & Humanities</h3>
+                <p>History, Political Science, Psychology, Sociology, Languages</p>
+                <button class="card-link explore-arts">Explore More →</button>
             </div>
         </div>
-    </section>
+        <div class="academics-actions">
+            <button class="btn btn-outline" id="view-all-programs">View All Academic Programs</button>
+        </div>
+    </div>
+</section>
 
+<!-- Academics Modal -->
+<div id="academics-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body" id="academics-modal-body">
+            <!-- Academics modal content will be loaded here -->
+        </div>
+    </div>
+</div>
     <!-- Events Section -->
-    <section class="events-section">
-        <div class="container">
-            <h2 class="section-title">Upcoming Events</h2>
-            <div class="events-container" id="events-container">
-                <!-- Events will be loaded from JSON -->
-            </div>
-            <div class="events-actions">
-                <a href="#" class="btn btn-outline">View All Events</a>
-            </div>
+<section class="events-section">
+    <div class="container">
+        <h2 class="section-title">Upcoming Events</h2>
+        <div class="events-container" id="events-container">
+            <!-- Events will be loaded from JSON -->
         </div>
-    </section>
+        <div class="events-actions">
+            <button class="btn btn-outline" id="view-all-events">View All Events</button>
+        </div>
+    </div>
+</section>
 
+<!-- Events Modal -->
+<div id="events-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body" id="events-modal-body">
+            <!-- Events modal content will be loaded here -->
+        </div>
+    </div>
+</div>
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -212,7 +233,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Diamond Public School. All rights reserved.</p>
+                <p>&copy; 2025 Diamond Public School. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -220,6 +241,7 @@
     <script src="assets/js/slider.js"></script>
     <script src="assets/js/animations.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/academics.js"></script>
     <!-- Three.js Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
