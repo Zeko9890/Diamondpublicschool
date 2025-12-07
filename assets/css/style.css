@@ -1283,6 +1283,14 @@ h1, h2, h3, h4, h5, h6 {
         align-items: start;
     }
     
+    .contact-details {
+        grid-column: 1;
+    }
+    
+    .contact-form-container {
+        grid-column: 2;
+        margin-top: 0;
+    }
 }
 
 /* Mobile: Stack contact form below */
