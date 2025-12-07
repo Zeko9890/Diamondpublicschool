@@ -6,19 +6,16 @@
 }
 
 :root {
-    --primary-color: #2563eb;
-    --secondary-color: #7c3aed;
-    --accent-color: #ec4899;
-    --text-color: #1f2937;
-    --text-light: #6b7280;
-    --bg-color: #fafafa;
-    --bg-light: #f3f4f6;
-    --bg-light-alt: #e5e7eb;
-    --bg-dark: #111827;
-    --border-color: #d1d5db;
-    --section-border: #e5e7eb;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.08);
+    --primary-color: #3a86ff;
+    --secondary-color: #8338ec;
+    --accent-color: #ff006e;
+    --text-color: #333;
+    --text-light: #666;
+    --bg-color: #fff;
+    --bg-light: #f8f9fa;
+    --bg-dark: #343a40;
+    --border-color: #e9ecef;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
 
@@ -60,87 +57,6 @@ h1, h2, h3, h4, h5, h6 {
     height: 4px;
     background: var(--primary-color);
     border-radius: 2px;
-}
-
-/* Section Styling Enhancements */
-.stats-section,
-.academics-section,
-.events-section,
-.faq-section,
-.values-section,
-.leadership-section,
-.history-section,
-.gallery-section,
-.faculty-grid-section {
-    position: relative;
-}
-
-/* Add subtle top borders to sections */
-.stats-section::before,
-.academics-section::before,
-.events-section::before,
-.faq-section::before,
-.values-section::before,
-.leadership-section::before,
-.history-section::before,
-.gallery-section::before,
-.faculty-grid-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
-    background: linear-gradient(to right, transparent, var(--section-border), transparent);
-}
-
-/* Section backgrounds */
-.stats-section,
-.history-section,
-.leadership-section,
-.map-section,
-.faculty-filter,
-.gallery-filter {
-    background: var(--bg-light);
-}
-
-.academics-section,
-.values-section,
-.faq-section {
-    background: var(--bg-light-alt);
-}
-
-/* Card enhancements */
-.stat-card,
-.academic-card,
-.event-card,
-.value-card,
-.leader-card,
-.teacher-card,
-.faq-item,
-.mv-card {
-    background: var(--bg-color);
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow);
-    transition: var(--transition);
-}
-
-.stat-card:hover,
-.academic-card:hover,
-.event-card:hover,
-.value-card:hover,
-.leader-card:hover,
-.teacher-card:hover,
-.faq-item:hover,
-.mv-card:hover {
-    border-color: var(--primary-color);
-    box-shadow: var(--shadow-lg);
-    transform: translateY(-3px);
-}
-
-/* Container subtle background */
-.container {
-    background: transparent;
 }
 
 /* Buttons */
@@ -278,38 +194,56 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hero Section */
-/* Hero background overlay */
-.hero::before {
-    content: '';
+.hero {
+    margin-top: 80px;
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.slider-container {
+    position: relative;
+    height: 100%;
+}
+
+.slider {
+    height: 100%;
+    position: relative;
+}
+
+.slide {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(250, 250, 250, 0.1), var(--bg-color));
-    z-index: 1;
-    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.slide.active {
+    opacity: 1;
 }
 
 .slide-content {
-    position: relative;
-    z-index: 3;
+    flex: 1;
+    padding: 0 4rem;
+    z-index: 2;
 }
 
-/* Hero image styling */
-.placeholder-image {
-    width: 100%;
-    height: 400px;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-radius: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 1.5rem;
-    font-weight: 500;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+.slide-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.slide-text {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--text-light);
+    max-width: 500px;
 }
 
 .slide-image {
@@ -562,29 +496,22 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-    background: #0f172a;
-    color: #e2e8f0;
+    background: var(--bg-dark);
+    color: white;
     padding: 3rem 0 1rem;
-    border-top: 1px solid var(--section-border);
 }
 
 .footer-content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2.5rem;
+    gap: 2rem;
     margin-bottom: 2rem;
 }
 
-.footer-section h3 {
-    margin-bottom: 1rem;
-    color: #f8fafc;
-    font-size: 1.25rem;
-}
-
+.footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: #cbd5e1;
-    font-size: 1.1rem;
+    color: white;
 }
 
 .footer-section ul {
@@ -592,27 +519,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-section ul li {
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .footer-section a {
-    color: #94a3b8;
+    color: #ccc;
     text-decoration: none;
     transition: var(--transition);
-    font-size: 0.95rem;
 }
 
 .footer-section a:hover {
-    color: #60a5fa;
-    padding-left: 5px;
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    font-size: 1.5rem;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid #334155;
-    color: #94a3b8;
-    font-size: 0.9rem;
+    border-top: 1px solid #555;
+    color: #ccc;
 }
 
 /* Responsive Design */
@@ -1778,12 +1711,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    transition: var(--transition);
-    border-bottom: 1px solid var(--border-color);
+    z-index: 1000 !important;
+    background: var(--bg-color) !important;
 }
 
 .hero {
@@ -3034,6 +2963,7 @@ body.dark-mode .social-icon:hover {
     .leadership-grid {
         grid-template-columns: 1fr;
     }
+}
 
 @media (max-width: 480px) {
     /* Extra small device fixes */
@@ -3092,112 +3022,4 @@ html {
     .container {
         -webkit-overflow-scrolling: touch;
     }
-}
-
-/* ========== PAGE BOUNDARY ENHANCEMENTS ========== */
-
-/* Main content boundaries */
-main {
-    background: var(--bg-color);
-    position: relative;
-}
-
-/* Content container boundaries */
-.container {
-    position: relative;
-}
-
-.container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 20px;
-    right: 20px;
-    height: 1px;
-    background: var(--section-border);
-}
-
-/* Section spacing */
-section {
-    padding: 4rem 0;
-    position: relative;
-}
-
-/* Alternative background sections */
-section:nth-child(even):not(.hero):not(.page-header):not(.footer) {
-    background: var(--bg-light);
-}
-
-/* Card container boundaries */
-.stats-grid,
-.academics-grid,
-.events-container,
-.faculty-grid,
-.gallery-grid,
-.values-grid,
-.leadership-grid {
-    position: relative;
-    padding: 1rem 0;
-}
-
-/* Form boundaries */
-.contact-form-container,
-.form-group input,
-.form-group select,
-.form-group textarea {
-    border: 1px solid var(--border-color);
-    background: var(--bg-color);
-}
-
-.contact-form-container {
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* Button boundaries */
-.btn {
-    border: 1px solid transparent;
-}
-
-.btn-primary {
-    border-color: var(--primary-color);
-}
-
-.btn-outline {
-    border-color: var(--primary-color);
-}
-
-/* Modal boundaries */
-.modal-content {
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-lg);
-}
-
-/* Map boundaries */
-.map-container {
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-/* Image placeholder boundaries */
-.placeholder-image {
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-/* Table-like alignment for lists */
-.detail-section li {
-    border-bottom: 1px solid var(--border-color);
-    padding: 0.75rem 0;
-}
-
-.detail-section li:last-child {
-    border-bottom: none;
-}
-
-/* Grid item boundaries */
-.grid-item {
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
 }
