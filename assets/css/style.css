@@ -130,20 +130,26 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0 auto;
 }
 
+/* In your CSS file, update the nav-logo */
 .nav-logo a {
-    font-family: 'Dancing Script', cursive;
-    font-size: 2rem;
+    font-family: 'Cinzel', serif; /* or 'Playfair Display', serif */
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
+    letter-spacing: 1px;
 }
 
-/* Add a subtle gradient text effect */
+/* Optional: Add a subtle decorative element */
 .nav-logo a {
-    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    position: relative;
+}
+
+.nav-logo a::after {
+    content: '✦';
+    margin-left: 5px;
+    font-size: 0.8rem;
+    color: var(--accent-color);
 }
 
 .nav-list {
