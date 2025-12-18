@@ -76,22 +76,22 @@ h1, h2, h3, h4, h5, h6 {
 
 .btn-primary {
     background: var(--primary-color);
-    color: white;
+    color: rgba(0, 0, 0, 0.911);
 }
 
 .btn-primary:hover {
-    background: #2a75f5;
+    background: #144688;
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
 
 .btn-secondary {
     background: var(--secondary-color);
-    color: white;
+    color: rgba(5, 5, 5, 0.87);
 }
 
 .btn-secondary:hover {
-    background: #7229d6;
+    background: #196d9e;
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
