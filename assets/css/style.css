@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary:hover {
-    background: #aab91f;
+    background: #289bc9;
     transform: translateY(-2px);
     box-shadow: var(--shadow);
 }
