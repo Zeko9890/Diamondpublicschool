@@ -2668,15 +2668,20 @@ canvas {
 }
 
 .event-image-large {
+    width: 200px;  /* Matches your grid column width */
     height: 150px;
-    background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
     border-radius: 15px;
+    overflow: hidden;  /* Keeps image inside the box */
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgb(40, 230, 230);
-    font-weight: 600;
-    font-size: 1.1rem;
+}
+
+.event-image-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Makes image fill the space properly */
+    display: block;
 }
 
 .event-info h2 {
