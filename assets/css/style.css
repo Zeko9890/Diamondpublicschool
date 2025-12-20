@@ -2982,9 +2982,9 @@ html {
 
 .school-logo {
   width: 45px;
-  height: 58px;
+  height: 60px;
   padding: 4px;
-  background: rgb(0, 0, 0);
+  background: rgb(209, 125, 14);
   object-fit: cover;
   border-radius: 50%;
 }
