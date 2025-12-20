@@ -1,42 +1,45 @@
-// Gallery page functionality
-document.addEventListener('DOMContentLoaded', function() {
-    loadGalleryData();
-    initGalleryFilter();
-});
-
 function loadGalleryData(filterCategory = 'all') {
     const galleryGrid = document.getElementById('gallery-grid');
     if (!galleryGrid) return;
     
-    galleryGrid.innerHTML = `
-    <div class="gallery-item" data-category="campus">
-        <img src="assets/images/gallery/campus-1.jpg"
-             alt="School Campus"
-             class="gallery-image">
-        <div class="gallery-caption">
-            <h4>School Campus</h4>
-            <p>Beautiful view of our main building</p>
-        </div>
-    </div>
-`;
-
-        <div class="gallery-item" data-category="events">
-            <div class="gallery-image">Event Photo 1</div>
+    // Define your gallery items
+    const galleryItems = [
+        {
+            category: 'campus',
+            image: 'images/campus-photo-1.jpg',
+            title: 'School Campus',
+            description: 'Beautiful view of our main building'
+        },
+        {
+            category: 'events',
+            image: 'images/event-photo-1.jpg',
+            title: 'Annual Function',
+            description: 'Cultural performances by students'
+        },
+        {
+            category: 'sports',
+            image: 'images/sports-day-1.jpg',
+            title: 'Sports Day',
+            description: 'Students participating in athletics'
+        }
+    ];
+    
+    // Filter items
+    const filteredItems = filterCategory === 'all' 
+        ? galleryItems 
+        : galleryItems.filter(item => item.category === filterCategory);
+    
+    // Generate HTML
+    galleryGrid.innerHTML = filteredItems.map(item => `
+        <div class="gallery-item" data-category="${item.category}">
+            <div class="gallery-image">
+                <img src="${item.image}" alt="${item.title}">
+            </div>
             <div class="gallery-caption">
-                <h4>Annual Function</h4>
-                <p>Cultural performances by students</p>
+                <h4>${item.title}</h4>
+                <p>${item.description}</p>
             </div>
         </div>
-    `;
+    `).join('');
 }
-
-function initGalleryFilter() {
-    const filterButtons = document.querySelectorAll('.gallery-filter .filter-btn');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            this.classList.add('active');
-            loadGalleryData(this.getAttribute('data-category'));
-        });
-    });
-}
+```
