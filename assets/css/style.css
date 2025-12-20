@@ -1168,6 +1168,7 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     transition: var(--transition);
     position: relative;
+    border: 2px solid red;
 }
 
 .gallery-item:hover {
