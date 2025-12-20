@@ -1632,7 +1632,6 @@ h1, h2, h3, h4, h5, h6 {
     position: absolute;
     top: 0;
     left: 0;
-    margin-left: -20px; 
 }
 
 .google-map iframe {
