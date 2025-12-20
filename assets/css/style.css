@@ -1177,16 +1177,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .gallery-image {
     width: 100%;
-    height: auto;
+    height: 100%;
+    aspect-ratio: 4 / 3;     /* keeps shape */
+    object-fit: cover;       /* fills area */
     display: block;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    aspect-ratio: 4/3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 500;
+    border-radius: 10px;
 }
+
 
 .gallery-caption {
     position: absolute;
