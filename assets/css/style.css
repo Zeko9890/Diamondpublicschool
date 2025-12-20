@@ -1168,7 +1168,6 @@ h1, h2, h3, h4, h5, h6 {
     cursor: pointer;
     transition: var(--transition);
     position: relative;
-    border: 2px solid red;
 }
 
 .gallery-item:hover {
@@ -1178,13 +1177,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .gallery-image {
     width: 100%;
-    height: 100%;
-    aspect-ratio: 4 / 3;     /* keeps shape */
-    object-fit: cover;       /* fills area */
+    height: auto;
     display: block;
+    position: relative;
+    overflow: hidden;
     border-radius: 10px;
 }
 
+.gallery-image img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+}
 
 .gallery-caption {
     position: absolute;
