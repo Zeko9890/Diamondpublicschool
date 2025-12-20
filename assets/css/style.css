@@ -2972,8 +2972,8 @@ html {
 }
 
 .school-logo {
-  width: 40px;
-  height: 40px;
+  width: 45px;
+  height: 45px;
   padding: 4px;
   background: white;
   object-fit: cover;
@@ -2987,6 +2987,6 @@ html {
 
 @media (min-width: 768px) {
   .school-logo {
-    width: 50px;
+    width: 55px;
   }
 }
