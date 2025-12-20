@@ -2674,7 +2674,7 @@ canvas {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: rgb(40, 230, 230);
     font-weight: 600;
     font-size: 1.1rem;
 }
