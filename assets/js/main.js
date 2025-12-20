@@ -162,7 +162,7 @@ function showEventDetails(eventId) {
             location: "School Main Ground",
             description: "Showcasing innovative projects from our science students.",
             fullDescription: "Our Annual Science Fair brings together the brightest young minds to showcase their innovative projects. Students from grades 6-12 will present experiments and research in physics, chemistry, biology, and computer science.",
-            image: "",
+            image: "https://via.placeholder.com/800x400/4A90E2/ffffff?text=Graduation+Day",
             participants: "Students Grades 6-12",
             organizer: "Diamond Public School"
         },
@@ -174,7 +174,7 @@ function showEventDetails(eventId) {
             location: "School Sports ground", 
             description: "Annual inter-house sports competition.",
             fullDescription: "The much-awaited Annual Sports Day features track and field events, team sports, and traditional games. Students compete for the championship trophy in a spirit of sportsmanship.",
-            image: "Sports Day",
+            image: "https://via.placeholder.com/800x400/50C878/ffffff?text=Sports+Day",
             participants: "All Students",
             organizer: "Diamond Public School"
         },
@@ -192,6 +192,9 @@ function showEventDetails(eventId) {
         }
     ];
     
+    // Rest of your showEventDetails function code here...
+}
+    
     const event = events.find(e => e.id == eventId);
     if (!event) return;
     
@@ -202,7 +205,7 @@ function showEventDetails(eventId) {
         <div class="event-modal-content">
             <div class="event-header">
                 <div class="event-image-large">
-                    ${event.image}
+                    <img src="${event.image}" alt="${event.title}">
                 </div>
                 <div class="event-info">
                     <h2>${event.title}</h2>
