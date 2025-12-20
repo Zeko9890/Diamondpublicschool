@@ -2958,3 +2958,16 @@ html {
         -webkit-overflow-scrolling: touch;
     }
 }
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white; /* change if navbar text color is different */
+}
+
+.school-logo {
+  width: 40px;      /* adjust size */
+  height: auto;
+}
+
