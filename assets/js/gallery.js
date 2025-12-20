@@ -6,7 +6,7 @@ function loadGalleryData(filterCategory = 'all') {
     const galleryItems = [
         {
             category: 'campus',
-            image: 'images/campus-photo-1.jpg',
+            image: 'assets/images/gallery/campus-1.jpg',
             title: 'School Campus',
             description: 'Beautiful view of our main building'
         },
