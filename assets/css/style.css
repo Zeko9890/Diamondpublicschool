@@ -2975,7 +2975,7 @@ html {
   width: 45px;
   height: 45px;
   padding: 4px;
-  background: white;
+  background: rgb(182, 31, 31);
   object-fit: cover;
   border-radius: 50%;
 }
