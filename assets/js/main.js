@@ -162,7 +162,7 @@ function showEventDetails(eventId) {
             location: "School Main Ground",
             description: "Showcasing innovative projects from our science students.",
             fullDescription: "Our Annual Science Fair brings together the brightest young minds to showcase their innovative projects. Students from grades 6-12 will present experiments and research in physics, chemistry, biology, and computer science.",
-            image: "https://via.placeholder.com/800x400/4A90E2/ffffff?text=Graduation+Day",
+            image: "assets/images/upcoming_events/graduation_day.jpg",
             participants: "Students Grades 6-12",
             organizer: "Diamond Public School"
         },
@@ -174,7 +174,7 @@ function showEventDetails(eventId) {
             location: "School Sports ground", 
             description: "Annual inter-house sports competition.",
             fullDescription: "The much-awaited Annual Sports Day features track and field events, team sports, and traditional games. Students compete for the championship trophy in a spirit of sportsmanship.",
-            image: "https://via.placeholder.com/800x400/50C878/ffffff?text=Sports+Day",
+            image: "assets/images/upcoming_events/sports_day.jpg",
             participants: "All Students",
             organizer: "Diamond Public School"
         },
@@ -186,7 +186,7 @@ function showEventDetails(eventId) {
             location: "School Auditorium",
             description: "Celebrating diversity through music, dance, and art.",
             fullDescription: "Our Cultural Festival showcases the diverse talents of our students through music, dance, drama, and art performances. The event celebrates our school's cultural diversity.",
-            image: "https://via.placeholder.com/800x400/E94B3C/ffffff?text=Cultural+Festival", 
+            image: "assets/images/upcoming_events/cultural_festival.jpg", 
             participants: "All Students & Parents",
             organizer: "Diamond Public School"
         }
