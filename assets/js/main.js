@@ -99,7 +99,7 @@ async function loadEvents() {
                 title: "Cultural Festival",
                 date: "2026-04-26",
                 description: "Celebrating diversity through music, dance, and art.",
-                image: "https://via.placeholder.com/400x250/E94B3C/ffffff?text=Cultural+Festival"
+                image: "assets/images/upcoming_events/cultural_festival.jpg"
             }
         ];
         displayEvents(placeholderEvents);
