@@ -9,13 +9,17 @@ function loadGalleryData(filterCategory = 'all') {
     if (!galleryGrid) return;
     
     galleryGrid.innerHTML = `
-        <div class="gallery-item" data-category="campus">
-            <div class="gallery-image">Campus Photo 1</div>
-            <div class="gallery-caption">
-                <h4>School Campus</h4>
-                <p>Beautiful view of our main building</p>
-            </div>
+    <div class="gallery-item" data-category="campus">
+        <img src="assets/images/gallery/campus-1.jpg"
+             alt="School Campus"
+             class="gallery-image">
+        <div class="gallery-caption">
+            <h4>School Campus</h4>
+            <p>Beautiful view of our main building</p>
         </div>
+    </div>
+`;
+
         <div class="gallery-item" data-category="events">
             <div class="gallery-image">Event Photo 1</div>
             <div class="gallery-caption">
