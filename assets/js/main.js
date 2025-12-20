@@ -156,39 +156,39 @@ function showEventDetails(eventId) {
     const events = [
         {
             id: 1,
-            title: "Annual Science Fair",
-            date: "2023-11-15",
+            title: "Graduation Day",
+            date: "2026-04-12",
             time: "9:00 AM - 3:00 PM",
             location: "School Main Ground",
             description: "Showcasing innovative projects from our science students.",
             fullDescription: "Our Annual Science Fair brings together the brightest young minds to showcase their innovative projects. Students from grades 6-12 will present experiments and research in physics, chemistry, biology, and computer science.",
-            image: "Science Fair",
+            image: "",
             participants: "Students Grades 6-12",
-            organizer: "Science Department"
+            organizer: "Diamond Public School"
         },
         {
             id: 2, 
             title: "Sports Day",
-            date: "2023-11-25",
-            time: "8:00 AM - 5:00 PM",
-            location: "School Sports Complex", 
+            date: "2026-11-25",
+            time: "10:30 AM - 1:00 PM",
+            location: "School Sports ground", 
             description: "Annual inter-house sports competition.",
             fullDescription: "The much-awaited Annual Sports Day features track and field events, team sports, and traditional games. Students compete for the championship trophy in a spirit of sportsmanship.",
             image: "Sports Day",
             participants: "All Students",
-            organizer: "Sports Department"
+            organizer: "Diamond Public School"
         },
         {
             id: 3,
             title: "Cultural Festival", 
-            date: "2023-12-05",
-            time: "10:00 AM - 8:00 PM",
+            date: "2026-04-26",
+            time: "9:00 AM - 12:00 PM",
             location: "School Auditorium",
             description: "Celebrating diversity through music, dance, and art.",
             fullDescription: "Our Cultural Festival showcases the diverse talents of our students through music, dance, drama, and art performances. The event celebrates our school's cultural diversity.",
-            image: "Cultural Festival", 
+            image: "assets/images/uncoming_events/cultural_festival.jpg", 
             participants: "All Students & Parents",
-            organizer: "Cultural Committee"
+            organizer: "Diamond Public School"
         }
     ];
     
