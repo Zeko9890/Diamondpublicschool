@@ -2990,3 +2990,11 @@ html {
     width: 65px;
   }
 }
+
+.slide-image,
+.slide,
+.slide-img {
+  opacity: 1 !important;
+  animation: none !important;
+  transition: none !important;
+}
