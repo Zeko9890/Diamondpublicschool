@@ -17,7 +17,7 @@ function loadGalleryData(filterCategory = 'all') {
     const galleryItems = [
         {
             category: 'campus',
-            image: 'https://via.placeholder.com/400x300/4A90E2/ffffff?text=Campus+1',
+            image: 'assets/images/gallery/campus-1.jpg',
             title: 'School Campus',
             description: 'Beautiful view of our main building'
         },
