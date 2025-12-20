@@ -23,32 +23,32 @@ function loadGalleryData(filterCategory = 'all') {
         },
         {
             category: 'events',
-            image: 'https://via.placeholder.com/400x300/E94B3C/ffffff?text=Event+1',
-            title: 'Annual Function',
-            description: 'Cultural performances by students'
+            image: 'assets/images/gallery/computer_lab.jpg',
+            title: 'Graduation Day',
+            description: 'Our well-equipped Computer Lab'
         },
         {
             category: 'sports',
-            image: 'https://via.placeholder.com/400x300/50C878/ffffff?text=Sports+1',
+            image: 'assets/images/gallery/sports.jpg',
             title: 'Sports Day',
             description: 'Students participating in athletics'
         },
         {
             category: 'academics',
-            image: 'https://via.placeholder.com/400x300/FFB347/ffffff?text=Academic+1',
+            image: 'assets/images/gallery/science_lab.jpg',
             title: 'Science Lab',
             description: 'Students conducting experiments'
         },
         {
             category: 'campus',
-            image: 'https://via.placeholder.com/400x300/4A90E2/ffffff?text=Campus+2',
+            image: 'assets/images/gallery/library.avif',
             title: 'School Library',
             description: 'Our well-equipped library'
         },
         {
             category: 'events',
-            image: 'https://via.placeholder.com/400x300/E94B3C/ffffff?text=Event+2',
-            title: 'Independence Day',
+            image: 'assets/images/gallery/republic_day.jpeg',
+            title: 'Republic Day',
             description: 'Celebrating our nation'
         }
     ];
