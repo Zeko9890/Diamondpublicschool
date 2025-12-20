@@ -2971,3 +2971,16 @@ html {
   height: auto;
 }
 
+.school-logo {
+  border-radius: 50%;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .school-logo {
+    width: 50px;
+  }
+}
