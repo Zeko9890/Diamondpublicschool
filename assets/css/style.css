@@ -2990,12 +2990,3 @@ html {
     width: 65px;
   }
 }
-
-.slide-image {
-  animation: fade 2s ease-in-out;
-}
-
-@keyframes fade {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
