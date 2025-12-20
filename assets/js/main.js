@@ -186,7 +186,7 @@ function showEventDetails(eventId) {
             location: "School Auditorium",
             description: "Celebrating diversity through music, dance, and art.",
             fullDescription: "Our Cultural Festival showcases the diverse talents of our students through music, dance, drama, and art performances. The event celebrates our school's cultural diversity.",
-            image: "assets/images/uncoming_events/cultural_festival.jpg", 
+            image: "assets/images/upcoming_events/cultural_festival.jpg", 
             participants: "All Students & Parents",
             organizer: "Diamond Public School"
         }
