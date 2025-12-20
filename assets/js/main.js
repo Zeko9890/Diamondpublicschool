@@ -85,14 +85,14 @@ async function loadEvents() {
                 title: "Graduation Day",
                 date: "2026-04-12",
                 description: "Showcasing innovative projects from our science students.",
-                image: "https://via.placeholder.com/400x250/4A90E2/ffffff?text=Graduation+Day"
+                image: "assets/images/upcoming_events/graduation_day.jpg"
             },
             {
                 id: 2,
                 title: "Sports Day",
                 date: "2026-11-25",
                 description: "Annual inter-house sports competition.",
-                image: "https://via.placeholder.com/400x250/50C878/ffffff?text=Sports+Day"
+                image: "assets/images/upcoming_events/sports_day.jpg"
             },
             {
                 id: 3,
