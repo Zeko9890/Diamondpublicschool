@@ -1622,9 +1622,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .map-container {
-    width: 100%;
-    display: flex;
-    justify-content: center; /* centers map horizontally */
+    position: relative;
+    min-height: 400px;
 }
 
 .google-map {
