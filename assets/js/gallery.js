@@ -22,9 +22,9 @@ function loadGalleryData(filterCategory = 'all') {
             description: 'Beautiful view of our main building'
         },
         {
-            category: 'events',
+            category: 'Academics',
             image: 'assets/images/gallery/computer_lab.jpg',
-            title: 'Graduation Day',
+            title: 'Computer Lab',
             description: 'Our well-equipped Computer Lab'
         },
         {
