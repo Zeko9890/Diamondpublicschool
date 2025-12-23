@@ -47,7 +47,7 @@ function loadGalleryData(filterCategory = 'all') {
         },
         {
             category: 'events',
-            image: 'assets/images/gallery/republic_day.jpeg',
+            image: 'assets/images/gallery/repjublic_day.jpg',
             title: 'Republic Day',
             description: 'Celebrating our nation'
         },
