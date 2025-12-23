@@ -57,7 +57,7 @@ function loadGalleryData(filterCategory = 'all') {
             title: 'Yoga Day',
             description: 'Stretch Breathe Transform Live'
         },
-{
+        {
             category: 'events',
             image: 'assets/images/gallery/trip.jpg',
             title: 'School Trip',
