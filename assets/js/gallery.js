@@ -50,7 +50,25 @@ function loadGalleryData(filterCategory = 'all') {
             image: 'assets/images/gallery/republic_day.jpeg',
             title: 'Republic Day',
             description: 'Celebrating our nation'
-        }
+        },
+        {
+            category: 'events',
+            image: 'add another image',
+            title: 'Event3',
+            description: 'Celebrating our nation'
+        },
+{
+            category: 'events',
+            image: 'add another image',
+            title: 'Event1',
+            description: 'Celebrating our nation'
+        },
+        {
+            category: 'events',
+            image: 'add another image',
+            title: 'Event2',
+            description: 'Celebrating our nation'
+        },
     ];
     
     // Filter items
