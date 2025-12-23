@@ -53,22 +53,28 @@ function loadGalleryData(filterCategory = 'all') {
         },
         {
             category: 'events',
-            image: 'add another image',
-            title: 'Event3',
-            description: 'Celebrating our nation'
+            image: 'assets/images/gallery/yoga.jpg',
+            title: 'Yoga Day',
+            description: 'Stretch Breathe Transform Live'
         },
 {
             category: 'events',
-            image: 'add another image',
-            title: 'Event1',
-            description: 'Celebrating our nation'
+            image: 'assets/images/gallery/trip.jpg',
+            title: 'School Trip',
+            description: 'Memories Made Together Forever'
         },
         {
             category: 'events',
-            image: 'add another image',
-            title: 'Event2',
-            description: 'Celebrating our nation'
+            image: 'assets/images/gallery/parshuramjayanti.jpg',
+            title: 'Parshuram Jayanti',
+            description: 'Jai Parshuram Bhagwan'
         },
+        {
+            category: 'events',
+            image: 'assets/images/gallery/janmashtami.jpg',
+            title: 'Janmashtami Celebration',
+            description: 'Celebrating Birth Of Krishna'
+        }
     ];
     
     // Filter items
