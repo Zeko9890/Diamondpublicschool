@@ -1154,21 +1154,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 3rem 0 5rem;
 }
 
-.masonry-grid {
+#gallery-grid.masonry-grid {
     columns: 4 300px;
     column-gap: 1.5rem;
+    width: 100%;
 }
 
 .gallery-item {
     break-inside: avoid;
     margin-bottom: 1.5rem;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    cursor: pointer;
-    transition: var(--transition);
-    position: relative;
 }
+
 
 .gallery-item:hover {
     transform: translateY(-5px);
